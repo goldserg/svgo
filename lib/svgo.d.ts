@@ -33,6 +33,12 @@ export type Config = {
   /** Precision of floating point numbers. Will be passed to each plugin that supports this param. */
   floatPrecision?: number;
   /**
+   * Maximum number of XML entities the parser is allowed to expand before
+   * throwing, forwarded to sax as its XXE protection limit.
+   * Defaults to sax's own default (512 in sax >= 1.6.0) when omitted.
+   */
+  maxEntityCount?: number;
+  /**
    * Plugins configuration
    * ['preset-default'] is default
    * Can also specify any builtin plugin
